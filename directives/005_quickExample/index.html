@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quick example</title>
+    <style>
+        .tile {
+            border: 1px solid lightgray;
+            padding: 10px;
+            border-radius: 3px;
+            border: 0 0 4px lightgray;
+            width: 70%;
+            margin: 30px auto;
+        }
+    </style>
+
+</head>
+
+<body ng-controller="MainController as vm">
+    <div ng-repeat="mutant in vm.mutants">
+        <xmen-tile character="mutant" />
+    </div>
+
+    <script src="../../bower_components/angular/angular.min.js"></script>
+    <script src="../../bower_components/chance/dist/chance.min.js"></script>
+    <script src="script.js"></script>
+    <script src="xmen.image.factory.js"></script>
+    <script src="xmen.directive.js"></script>
+</body>
+
+</html>

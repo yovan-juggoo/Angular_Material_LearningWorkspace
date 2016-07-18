@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Autocomplete basic usage</title>
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-cloak>
+    <div layout="column" ng-controller="UserController as vm" layout="column">
+        <h1>Autocomplete basic usage</h1>
+        <strong>Finding user with username and email</strong>
+        
+        <md-content class="md-padding">
+            <form method="post" name="vm.userForm" novalidate  ng-submit="vm.userForm.$valid && vm.update()" >
+                
+                <md-autocomplete
+                    ng-disabled="vm.isDisabled"
+                    ng-required="vm.isRequired" 
+                    md-no-cache="vm.noCache"
+                    md-selected-item="selectedItem"
+                    md-search-text="searchText"
+                    md-selected-item-change="vm.selectedItemChange(item)"
+                    md-items="item in vm.querySearch(vm.searchText)"
+                    md-item-text="item.email"
+                    md-min-length="0"
+                    md-floating-label="Search for user">
+                    <span md-highlight-text="vm.searchText">{{item.email}}</span>
+                    <md-not-found>
+                        No users matching "{{vm.searchText}}" were found.
+                        <a ng-click="vm.newUser(vm.searchText)">Create a new user!</a>
+                    </md-not-found>
+                </md-autocomplete>
+                
+               <div layout="row" layout-align="center center">
+                   <md-button id="button_save" class="icon" type="submit" aria-label="save"></md-button>
+               </div>
+            </form>
+        </md-content>
+    </div>
+    
+
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="../../../../bower_components/json-schema-faker/dist/json-schema-faker.min.js"></script>
+
+    <script src="script.js"></script>
+    <script src="user.factory.js"></script>
+
+</body>
+
+</html>

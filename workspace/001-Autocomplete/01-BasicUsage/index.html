@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-cloak>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column" ng-controller="MainController as vm">
+
+    <table class="bordered" ng-if="vm.users.length > 0">
+        <tr>
+            <th ng-if="vm.dataFlag.id">id</th>
+            <th ng-if="vm.dataFlag.name">Name</th>
+            <th ng-if="vm.dataFlag.email">Email</th>
+            <th ng-if="vm.dataFlag.street">Street</th>
+            <th ng-if="vm.dataFlag.city">City</th>
+            <th ng-if="vm.dataFlag.state">State</th>
+            <th ng-if="vm.dataFlag.country">Country</th>
+            <th ng-if="vm.dataFlag.zipCode">Zip code</th>
+        </tr>
+        <tr ng-repeat="item in vm.users">
+            <td ng-if="vm.dataFlag.id">{{item.id}}</td>
+            <td ng-if="vm.dataFlag.name">{{item.name}}</td>
+            <td ng-if="vm.dataFlag.email">{{item.email}}</td>
+            <td ng-if="vm.dataFlag.street">{{item.address.street}}</td>
+            <td ng-if="vm.dataFlag.city">{{item.address.city}}</td>
+            <td ng-if="vm.dataFlag.state">{{item.address.state}}</td>
+            <td ng-if="vm.dataFlag.country">{{item.address.country}}</td>
+            <td ng-if="vm.dataFlag.zipCode">{{item.address.zipCode}}</td>
+        </tr>
+    </table>
+
+    <script src="../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="../../../bower_components/json-schema-faker/dist/json-schema-faker.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

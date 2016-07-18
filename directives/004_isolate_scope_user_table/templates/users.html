@@ -1,0 +1,30 @@
+<h1>Users</h1>
+<h2>{{title}}</h2>
+<p>
+    <button id="resetData" class="btn" ng-click="populate()">Reset data</button>
+    <button id="addUser" class="btn" ng-click="addUser()">Add user</button>
+    <button id="addAdmin" class="btn" ng-click="addAdmin()">Add admin</button>
+</p>
+<table class="bordered" ng-if="users.length > 0">
+   <caption>Caption: {{caption}} - Count: {{counter}}</caption>
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Zip code</th>
+    </tr>
+    <tr ng-repeat="item in users">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.address.street}}</td>
+        <td>{{item.address.city}}</td>
+        <td>{{item.address.state}}</td>
+        <td>{{item.address.country}}</td>
+        <td>{{item.address.zipCode}}</td>
+    </tr>
+</table>

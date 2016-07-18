@@ -1,0 +1,7 @@
+To generate dummy JSON data in angular js apps:
+https://github.com/json-schema-faker/angular-jsf
+https://www.npmjs.com/package/json-schema-faker
+https://github.com/Marak/faker.js
+
+
+Important read: http://jimhoskins.com/2012/12/17/angularjs-and-apply.html

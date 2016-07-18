@@ -1,0 +1,23 @@
+<h1>Users</h1>
+<table class="bordered" ng-if="vm.users.length > 0">
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Zip code</th>
+    </tr>
+    <tr ng-repeat="item in vm.users">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.address.street}}</td>
+        <td>{{item.address.city}}</td>
+        <td>{{item.address.state}}</td>
+        <td>{{item.address.country}}</td>
+        <td>{{item.address.zipCode}}</td>
+    </tr>
+</table>

@@ -1,0 +1,14 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.icon {
+    background-image: url(images/icons.png);
+}
+
+#button_save {
+    background-position: -64px 0px;
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+}

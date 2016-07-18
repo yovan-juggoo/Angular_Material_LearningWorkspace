@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="../../bower_components/angular-material/angular-material.min.css">
+</head>
+
+<body layout="column" ng-controller="MainController">
+
+    <script src="../../bower_components/angular/angular.min.js"></script>
+    <script src="../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="../../bower_components/json-schema-faker/dist/json-schema-faker.min.js"></script>
+    <script src="../../bower_components/angular-jsf/angular-jsf.js"></script>
+
+
+    <script>
+        angular.module('myApp', ['ngMaterial'])
+            .controller('MainController', [MainController]);
+
+        function MainController() {
+            var schema = {
+                type: 'object',
+                properties: {
+                    user: {
+                        type: 'object',
+                        properties: {
+                            id: {
+                                $ref: '#/definitions/positiveInt'
+                            },
+                            name: {
+                                type: 'string',
+                                faker: 'name.findName'
+                            },
+                            email: {
+                                type: 'string',
+                                format: 'email',
+                                faker: 'internet.email'
+                            }
+                        },
+                        required: ['id', 'name', 'email']
+                    }
+                },
+                required: ['user'],
+                definitions: {
+                    positiveInt: {
+                        type: 'integer',
+                        minimum: 0,
+                        exclusiveMinimum: true
+                    }
+                }
+            };
+
+            var array = [];
+
+            for (var x = 0; x < 100; x++) {
+                var sample = jsf(schema);
+                array.push(sample);
+            }
+            
+        }
+    </script>
+
+</body>
+
+</html>

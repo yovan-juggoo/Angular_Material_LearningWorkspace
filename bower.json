@@ -1,0 +1,23 @@
+{
+  "name": "angularmaterial_learningworkspace",
+  "authors": [
+    "yovan <yovan.juggoo@chb-technologies.ch>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-jsf": "^0.1.1",
+    "angular-material": "^1.0.9",
+    "json-schema-faker": "^0.3.4",
+    "chance": "^1.0.3"
+  }
+}

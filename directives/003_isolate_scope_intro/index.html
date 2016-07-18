@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Isolate scope intro.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="MainController as vm" ng-cloak>
+    <div class="main-content">
+        <div user-isolate-scope table-title="{{vm.caption}}"></div>
+    </div>
+
+</body>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script src="../../bower_components/json-schema-faker/dist/json-schema-faker.min.js"></script>
+<script src="script.js"></script>
+<script src="user.controller.js"></script>
+<script src="user.directive.isolatescope.js"></script>
+
+</html>

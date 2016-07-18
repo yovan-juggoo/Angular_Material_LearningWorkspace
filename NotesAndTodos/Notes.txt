@@ -1,0 +1,21 @@
+1. Directives
+--------------
+restrict: Determines where a directive can be used (as an element, attribute, CSS class, or comment).
+scope:	Used to create a new child scope or an isolate scope.
+template: Defines the content that should be output from the directive. Can include HTML, data binding expressions, and even other directives.
+templateUrl: Provides the path to the template that should be used by the directive. It can optionally contain a DOM element id when templates are defined in <script> tags.
+controller:	Used to define the controller that will be associated with the directive template.
+link: Function used for DOM manipulation tasks.
+
+
+The link function normally accepts 3 parameters (although others can be passed in some situations) including the scope, the element that the directive is associated with, and the attributes of the target element. 
+An example of a directive is one that handles click, mouseenter, and mouseleave events on the element.
+
+
+When using shared scope, the directive has access to the parent scope. i.e the scope of the controller.
+
+In isolated scope, the directive does not have access to the parent scope. It does not know anything about the controller.
+
+@  Used to pass a string value into the directive
+=    Used to create a two-way binding to an object that is passed into the directive
+&    Allows an external function to be passed into the directive and invoked

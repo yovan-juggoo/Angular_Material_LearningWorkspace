@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Isolate scope intro.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="MainController as vm" ng-cloak>
+    <div class="main-content">
+        <user-isolate-scope add-admin="vm.addAdmin('Yovan Juggoo')" add-user="vm.addUser()" counter="{{vm.getCounter()}}" table-title="{{vm.caption}}" title="{{vm.title}}" users="vm.users" populate="vm.getUsers()"/>
+    </div>
+</body>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script src="../../bower_components/json-schema-faker/dist/json-schema-faker.min.js"></script>
+<script src="script.js"></script>
+<script src="user.directive.isolatescope.js"></script>
+
+</html>

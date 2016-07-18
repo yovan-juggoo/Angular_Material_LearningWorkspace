@@ -1,0 +1,11 @@
+<section class="tile">
+    <h1>{{character.name}}</h1>
+    <div>
+        <p>{{character.summary}}</p>
+        <p>{{character.description}}</p>
+    </div>
+    <div style="text-align: center; margin: 50px 0 70px 0">
+        <img ng-src="images/{{character.image}}" alt="character image">
+    </div>
+    <p><button ng-click="changeName()">Say hi</button></p>
+</section>
