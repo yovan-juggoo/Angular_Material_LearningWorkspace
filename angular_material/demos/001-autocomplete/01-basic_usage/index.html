@@ -12,35 +12,57 @@
     <div layout="column" ng-controller="UserController as vm" layout="column">
         <h1>Autocomplete basic usage</h1>
         <strong>Finding user with username and email</strong>
-        
+
         <md-content class="md-padding">
-            <form method="post" name="vm.userForm" novalidate  ng-submit="vm.userForm.$valid && vm.update()" >
-                
-                <md-autocomplete
-                    ng-disabled="vm.isDisabled"
-                    ng-required="vm.isRequired" 
-                    md-no-cache="vm.noCache"
-                    md-selected-item="selectedItem"
-                    md-search-text="searchText"
-                    md-selected-item-change="vm.selectedItemChange(item)"
-                    md-items="item in vm.querySearch(vm.searchText)"
-                    md-item-text="item.email"
-                    md-min-length="0"
-                    md-floating-label="Search for user">
-                    <span md-highlight-text="vm.searchText">{{item.email}}</span>
+            <form method="post" name="vm.userForm" novalidate ng-submit="vm.userForm.$valid && vm.update()">
+
+                <md-autocomplete 
+                   ng-disabled="vm.isDisabled" 
+                   ng-required="vm.isRequired"
+                   md-input-name="userData"
+                   md-no-cache="vm.noCache" 
+                   md-selected-item="vm.selectedItem" 
+                   md-search-text="vm.searchText" 
+                   md-selected-item-change="vm.selectedItemChange(item)"
+                   md-search-text-change="vm.searchTextChange(vm.searchText)" 
+                   md-items="item in vm.querySearch(vm.searchText)" 
+                   md-item-text="vm.capitalize(item)" 
+                   md-min-length="3" 
+                   md-floating-label="Search for user"
+                   md-is-error="vm.isRequired && vm.userForm.userData.$invalid && (vm.userForm.$submitted || vm.userForm.userData.$dirty)"
+                   md-delay="vm.delay"
+                   md-input-minlength="3"
+                   md-match-case-insensitive="true"
+                   >
+                    <md-item-template>
+                        <span md-highlight-text="vm.searchText">{{item.name}} - {{item.email}}</span>
+                    </md-item-template>
                     <md-not-found>
-                        No users matching "{{vm.searchText}}" were found.
-                        <a ng-click="vm.newUser(vm.searchText)">Create a new user!</a>
+                        <span>
+                            No users matching "{{vm.searchText}}" were found.
+                            <a ng-click="vm.addUser(vm.searchText)">Create a new user!</a>
+                        </span>
                     </md-not-found>
+                    <div ng-messages="vm.userForm.userData.$error" ng-if="(vm.userForm.$submitted || vm.userForm.userData.$touched) && vm.isRequired && vm.userForm.userData.$invalid">
+                        <div ng-message="required">Required data.</div>
+                    </div>
                 </md-autocomplete>
-                
-               <div layout="row" layout-align="center center">
-                   <md-button id="button_save" class="icon" type="submit" aria-label="save"></md-button>
-               </div>
+                <md-checkbox ng-model="vm.isRequired">Is the data required?</md-checkbox>
+                <md-checkbox ng-model="vm.simulateQuery">Simulate query for results?</md-checkbox>
+                <md-checkbox ng-model="vm.noCache">Disable caching of queries?</md-checkbox>
+                <md-checkbox ng-model="vm.isDisabled">Disable the input?</md-checkbox>
+                <div layout="row" layout-align="center center" class="md-padding">
+                    <md-button id="button_save" class="icon" type="submit" aria-label="save"></md-button>
+                </div>
+                <div>
+                    <p>
+                        By default md-autocomplete will cache results when performing a query. <br>
+                        After the initial call is performed, it will use the cached results to elininate unnecessary server requests or lookup logic
+                    </p>
+                </div>
             </form>
         </md-content>
     </div>
-    
 
     <script src="../../../../bower_components/angular/angular.min.js"></script>
     <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>

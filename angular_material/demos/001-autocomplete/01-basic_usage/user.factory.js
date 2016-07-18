@@ -4,29 +4,48 @@
         .factory('UserFactory', [UserFactory]);
 
     function UserFactory() {
-        var schema = {
-            type: 'object',
+        var userSchema = {
             properties: {
-                user: {
+                id: {
+                    $ref: '#/definitions/positiveInt'
+                },
+                name: {
+                    type: 'string',
+                    faker: 'name.findName'
+                },
+                email: {
+                    type: 'string',
+                    format: 'email',
+                    faker: 'internet.email'
+                },
+                address: {
                     type: 'object',
                     properties: {
-                        id: {
-                            $ref: '#/definitions/positiveInt'
-                        },
-                        name: {
+                        street: {
                             type: 'string',
-                            faker: 'name.findName'
+                            faker: 'address.streetName'
                         },
-                        email: {
+                        city: {
                             type: 'string',
-                            format: 'email',
-                            faker: 'internet.email'
+                            faker: 'address.city'
+                        },
+                        state: {
+                            type: 'string',
+                            faker: 'address.state'
+                        },
+                        country: {
+                            type: 'string',
+                            faker: 'address.country'
+                        },
+                        zipCode: {
+                            type: 'string',
+                            faker: 'address.zipCode'
                         }
                     },
-                    required: ['id', 'name', 'email']
+                    required: ['street', 'city', 'state', 'country', 'zipCode']
                 }
             },
-            required: ['user'],
+            required: ['id', 'name', 'email', 'address'],
             definitions: {
                 positiveInt: {
                     type: 'integer',
@@ -43,7 +62,7 @@
         function list() {
             var array = [];
             for (var x = 0; x < 100; x++) {
-                var sample = jsf(schema);
+                var sample = jsf(userSchema);
                 array.push(sample);
             }
            return array;
