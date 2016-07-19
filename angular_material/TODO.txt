@@ -2,3 +2,8 @@
 2. <md-content class="md-padding">
 3. min-width: https://css-tricks.com/almanac/properties/m/min-width/
 4. <div layout="row" layout-align="center center">
+5. See all the CSS involved in the angular material examples.
+6. a. Why do we link https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js in our HTML, 
+   b. and inject material.svgAssetsCache in our app module.
+7. Review the API Reference for md-autocomplete and md-highlight-text.
+8. Create material snippets for Brackets Snippets and send it by mail.

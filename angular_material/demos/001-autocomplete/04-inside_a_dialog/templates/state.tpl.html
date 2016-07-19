@@ -1,0 +1,35 @@
+<md-dialog aria-label="autocomplete dialog example" ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Please choose your state...</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancel()">
+                <md-icon md-svg-src="../../../../material_icons/ic_close_24px.svg" aria-label="close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <form name="vm.stateDlgForm" ng-submit="$event.preventDefault()">
+                <md-autocomplete
+                              md-input-name="state" 
+                              md-selected-item="vm.selectedItem"
+                              md-search-text="vm.searchText" 
+                              md-items="item in vm.querySearch(vm.searchText)" 
+                              md-item-text="item.value" 
+                              md-min-length="0" 
+                              placeholder="Your favorite state is?">
+                      <md-item-template>
+                            <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.value}}</span>
+                      </md-item-template>
+                      <md-not-found>
+                            No states matching "{{vm.searchText}}" were found.
+                      </md-not-found>
+                </md-autocomplete>
+            </form>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button aria-label="finished" ng-click="vm.finish($event)">Finished</md-buttons>
+    </md-dialog-actions>
+</md-dialog>
