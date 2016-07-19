@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bottom Sheet</title>
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column" ng-controller="MainController as vm" class="md-padding bottomSheetdemoBasicUsage">
+    <strong>This UX pattern is intended for mobile devices only, and may not make sense to use on responsive sites.</strong>
+    <h2 class="md-title">Usage</h2>
+    <p>
+        Bottom sheets can be displayed by clicking one of the buttons below. Once shown, it can be dismissed by either swiping down or clicking in the shaded area.
+    </p>
+    
+    <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+        <span flex="50">
+           <md-button class="md-primary md-raised" ng-click="vm.showListBottomSheet()">Show as List</md-button>
+       </span>
+        <span flex="50">
+            <md-button  class="md-primary md-raised" ng-click="vm.showGridBottomSheet()">Show as Grid</md-button>
+        </span>
+    </div>
+    
+    <div ng-if="vm.alert">
+        <br>
+        <b layout="row" layout-align="center center" class="md-padding">
+            {{vm.alert}}
+        </b>
+    </div>
+
+
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
