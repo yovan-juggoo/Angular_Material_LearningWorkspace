@@ -14,16 +14,14 @@
     <p>
         Bottom sheets can be displayed by clicking one of the buttons below. Once shown, it can be dismissed by either swiping down or clicking in the shaded area.
     </p>
-    
+
     <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
         <span flex="50">
            <md-button class="md-primary md-raised" ng-click="vm.showListBottomSheet()">Show as List</md-button>
-       </span>
-        <span flex="50">
             <md-button  class="md-primary md-raised" ng-click="vm.showGridBottomSheet()">Show as Grid</md-button>
         </span>
     </div>
-    
+
     <div ng-if="vm.alert">
         <br>
         <b layout="row" layout-align="center center" class="md-padding">
