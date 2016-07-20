@@ -9,3 +9,4 @@
 8. Create material snippets for Brackets Snippets and send it by mail.
 9. Review http://www.tutorialspoint.com/angular_material/angular_material_buttons.htm
 10. Download and use https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic locally.
+11. Use a theme so that the checkbox default colors can be overriden.

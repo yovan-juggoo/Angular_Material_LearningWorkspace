@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column">
+
+    <div ng-cloak ng-controller="MainController as vm" class="md-padding checkboxdemoBasicUsage">
+        <div>
+            <fieldset class="standard">
+                <legend>Using &lt;ng-model&gt;</legend>
+                <div layout="column" layout-wrap layout-gt-sm="row">
+                    <div flex-xs flex="50">
+                        <md-checkbox ng-model="vm.data.cb1" aria-label="Checkbox 1">
+                            Checkbox 1: {{ vm.data.cb1 }}
+                        </md-checkbox>
+                    </div>
+                    <div flex-xs flex="50">
+                        <div layout-xs="column" flex-xs="100">
+                            <md-checkbox ng-model="vm.data.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn md-align-top-left" flex>
+                                Checkbox 2 (md-warn)
+                                <br>
+                                <span class="ipsum">
+                                        Duis placerat lectus et justo mollis, nec sodales orci congue. Vestibulum semper non urna ac suscipit.
+                                        Vestibulum tempor, ligula id laoreet hendrerit, massa augue iaculis magna,
+                                        sit amet dapibus tortor ligula non nibh.
+                                    </span>
+                                <br> {{ vm.data.cb2 }}
+                            </md-checkbox>
+                        </div>
+                    </div>
+                    <div flex-xs flex="50">
+                        <md-checkbox ng-disabled="true" aria-label="Disabled checkbox" ng-model="vm.data.cb3">
+                            Checkbox: Disabled
+                        </md-checkbox>
+                    </div>
+                    <div flex-xs flex="50">
+                        <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="vm.data.cb4" ng-init="vm.data.cb4=true">
+                            Checkbox: Disabled, Checked
+                        </md-checkbox>
+                    </div>
+                    <div flex-xs flex="50">
+                        <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="vm.data.cb5" class="md-primary">
+                            Checkbox (md-primary): No Ink
+                        </md-checkbox>
+                    </div>
+                    <div flex-xs flex="50">
+                        <md-checkbox md-indeterminate aria-label="Checkbox Indeterminate" class="md-primary">
+                            Checkbox: Indeterminate
+                        </md-checkbox>
+                    </div>
+                    <div flex-xs flex="50">
+                        <md-checkbox md-indeterminate aria-label="Checkbox Disabled Indeterminate" ng-disabled="true" class="md-primary">
+                            Checkbox: Disabled, Indeterminate
+                        </md-checkbox>
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+
+
+    </div>
+
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
