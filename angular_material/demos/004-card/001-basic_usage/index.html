@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic usage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column">
+
+    <div ng-controller="MainController as vm" ng-cloak class="carddemoBasicUsage">
+        <md-content class="md-padding" layout-xs="column" layout="row">
+
+            <div flex-xs flex-gt-xs="50" layout="column">
+                <md-card md-theme="{{vm.showDarkTheme ? 'dark-grey' : 'default'}}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card with image</span>
+                            <span class="md-subhead">Large</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-lg card-media"></div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button>Action 1</md-button>
+                        <md-button>Action 2</md-button>
+                    </md-card-actions>
+                </md-card>
+
+                <md-card md-theme="{{vm.showDarkTheme ? 'dark-orange' : 'default'}}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card with image</span>
+                            <span class="md-subhead">Extra Large</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content layout="row" layout-align="space-between">
+                        <div class="md-media-xl card-media"></div>
+                        <md-card-actions layout="column">
+                            <md-button class="md-icon-button" aria-label="favorite">
+                                <md-icon md-svg-icon="../../../../material_icons/favorite.svg"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="settings">
+                                <md-icon md-svg-icon="../../../../material_icons/menu.svg"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="share">
+                                <md-icon md-svg-icon="../../../../material_icons/share-arrow.svg"></md-icon>
+                            </md-button>
+                        </md-card-actions>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div flex-xs flex-gt-xs="50" layout="column">
+                <md-card md-theme="{{vm.showDarkTheme ? 'dark-purple' : 'default'}}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card with image</span>
+                            <span class="md-subhead">Small</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-lg card-media"></div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button>Action 1</md-button>
+                        <md-button>Action 2</md-button>
+                    </md-card-actions>
+                </md-card>
+                
+                <md-card md-theme="{{vm.showDarkTheme ? 'dark-blue' : 'default'}}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card with image</span>
+                            <span class="md-subhead">Medium</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-md card-media"></div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button>Action 1</md-button>
+                        <md-button>Action 2</md-button>
+                    </md-card-actions>
+                </md-card>
+                
+                <div layout layout-padding layout-align="center end">
+                    <md-checkbox ng-model="vm.showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+                </div>
+            </div>
+
+        </md-content>
+    </div>
+
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
