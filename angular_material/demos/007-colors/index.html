@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column">
+
+    <div ng-cloak class="md-padding colorsdemoBasicUsage">
+        <p style="margin-bottom: 10px">
+            Custom components implementations using Material elements often want to easily apply Theme colors to their custom components. 
+            Consider the custom components <code>&lt;user-card&gt;&lt;/user-card&gt;</code> below where the <code>md-colors</code> 
+            attribute is used to color the background and text colors using either the current or specified Theme palette colors.
+        </p>
+
+        <!--Example 1-->
+        <span class="card-title"> <code>&lt;user-card&gt;</code> without md-color features</span>
+        <regular-card name="John Doe" md-theme="default"></regular-card>
+        
+        <!-- Example 2 -->
+        <span class="card-title"> <code>&lt;user-card&gt;</code> coloring using the 'default' Theme</span>
+        <user-card name="Jane Smith"></user-card>
+        
+        <!-- Example 3 -->
+        <span class="card-title"> <code>&lt;user-card&gt;</code> coloring using the 'forest' Theme</span>
+        <user-card name="Sally Sixpack" theme="forest"></user-card>
+
+        <p class="footnote">
+            Note: The <code>md-colors</code> directive allows pre-defined theme colors to be easily applied as CSS style properties.
+            <code>md-colors</code> uses the Palettes defined at <a class="md-accent" href="https://www.google.com/design/spec/style/color.html">Material Design Colors</a> 
+            and the Themes defined using <code>$mdThemingProvider</code>. This feature is simply an extension of the <code>$mdTheming</code> features.
+        </p>
+
+    </div>
+
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column">
+
+    <div ng-controller="MainController as vm" layout="column" ng-cloak class="chipsdemoContactChips">
+
+        <md-content class="md-padding autocomplete" layout="column">
+            <md-contact-chips ng-model="vm.contacts" md-contacts="vm.querySearch($query)" md-contact-name="name" md-contact-image="image" md-contact-email="email" md-require-match="true" md-highlight-flags="i" filter-selected="vm.filterSelected" placeholder="To">
+            </md-contact-chips>
+
+            <md-list class="fixedRows">
+                <md-subheader class="md-no-sticky">Contacts</md-subheader>
+                <md-list-item class="md-2-line contact-item" ng-repeat="(index, contact) in vm.allContacts" ng-if="vm.contacts.indexOf(contact) < 0">
+                    <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}">
+                    <div class="md-list-item-text compact">
+                        <h3>{{contact.name}}</h3>
+                        <p>{{contact.email}}</p>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, contact) in vm.contacts">
+                    <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}">
+                    <div class="md-list-item-text compact">
+                        <h3>{{contact.name}}</h3>
+                        <p>{{contact.email}}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+
+            <br>
+            <h2 class="md-title">Searching asynchronously.</h2>
+            <md-contact-chips ng-model="vm.asyncContacts" md-contacts="vm.delayedQuerySearch($query)" md-contact-name="name" md-contact-image="image" md-contact-email="email" md-require-match="true" md-highlight-flags="i" filter-selected="vm.filterSelected" placeholder="To">
+            </md-contact-chips>
+        </md-content>
+    </div>
+
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

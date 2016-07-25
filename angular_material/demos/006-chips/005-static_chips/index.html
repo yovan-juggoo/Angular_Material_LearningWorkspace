@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column">
+
+    <div ng-controller="MainController as vm" layout="column" ng-cloak class="chipsdemoStaticChips">
+
+    <md-content class="md-padding" layout="column">
+        <h2 class="md-title">Display a set of items as chips.</h2>
+
+        <md-chips>
+            <md-chip>Hockey</md-chip>
+            <md-chip>Lacrosse</md-chip>
+            <md-chip>Baseball</md-chip>
+
+            <!-- Static chips are transcluded -->
+            <md-chip>{{vm.chipText}}</md-chip>
+        </md-chips>
+        <p class="note">
+            Static chips cannot be selected, removed or edited, and are not part of any model.<br>
+            If no <code>ng-model</code> is provided, there are no input elements in <code>md-chips</code>.
+        </p>
+
+    </md-content>
+    </div>
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="doc.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column">
+
+    <div ng-controller="MainController as vm" layout="column" ng-cloak class="chipsdemoCustomSeparatorKeys">
+        <md-content class="md-padding" layout="column">
+
+            <h2 class="md-title">Use <code>md-separator-keys</code> to customize the key codes which trigger chip creation.</h2>
+            <md-chips ng-model="vm.tags" md-separator-keys="vm.keys" placeholder="Enter a tag" secondary-placeholder="Comma separated tags"></md-chips>
+            <br>
+
+            <h2 class="md-title">Add custom separator key codes such as semicolon for e-mails.</h2>
+            <md-chips ng-model="vm.contacts" md-separator-keys="vm.customKeys"></md-chips>
+
+        </md-content>
+    </div>
+
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
