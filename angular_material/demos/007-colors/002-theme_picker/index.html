@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="../../../../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body layout="column">
+
+    <div ng-cloak ng-controller="MainController as vm" class="md-padding colorsdemoThemePicker">
+        <p>
+            Select a color from the <a href="{{vm.mdUrl}}" class="md-accent">Theme Color Palettes</a> below:
+        </p>
+
+        <div layout="row" layout-wrap layout-align="center center">
+            <md-button ng-repeat="color in vm.colors" flex-gt-md="15" flex="30" md-colors="{background: '{{color}}'}" md-colors-watch="false" ng-disabled="vm.primary === color &&  !vm.isPrimary" ng-click="vm.selectTheme(color)">{{color}}</md-button>
+        </div>
+        <p style="padding-top: 20px;">
+            Show below are the colors of the custom <code>&lt;chb-theme-preview&gt;</code> component that were updated by <code>&lt;md-colors&gt;</code>
+        </p>
+
+        <div layout="row" class="section" layout-align="center center">
+            <div layout="column" flex="50">
+                <span class="componentTag">&lt;chb-theme-preview&gt;</span>
+                <chb-theme-preview primary="vm.primary" accent="vm.accent"></chb-theme-preview>
+            </div>
+        </div>
+        
+        <p class="footnote">
+            Notice that the foreground colors are automatically determined (from the theme configurations)
+            based on the specified background palette selection. Of course, you could easily override the
+            foreground color also...
+        </p>
+
+    </div>
+
+    <script src="../../../../bower_components/angular/angular.min.js"></script>
+    <script src="../../../../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../../../../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../../../../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../../../../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
